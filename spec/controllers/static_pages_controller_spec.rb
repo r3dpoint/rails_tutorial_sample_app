@@ -6,7 +6,7 @@ RSpec.describe StaticPagesController, type: :controller do
   render_views
   let(:base_title) { 'Ruby on Rails Tutorial Sample App' }
 
-  describe 'GET indezx' do
+  describe 'GET index' do
     it 'routes to static_pages#home' do
       # https://relishapp.com/rspec/rspec-rails/v/3-8/docs/routing-specs/route-to-matcher
       # https://gist.github.com/rafaelfragosom/940adee11ccf39f4a069
@@ -24,7 +24,7 @@ RSpec.describe StaticPagesController, type: :controller do
       get :home
       # get static_pages_home_url
       expect(response).to have_http_status(:success)
-      assert_select 'title', "Home | #{base_title}"
+      assert_select 'title', "#{base_title}"
     end
   end
 
